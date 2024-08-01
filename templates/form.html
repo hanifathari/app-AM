@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM PERMOHONAN KARTU BARU</title>
+    <link rel="stylesheet" href="static\css\style.css">
+    <div class="logo-container">
+        <img src="static\css\logo.png" alt="Logo" class="logo">
+    </div>
+</head>
+<body>
+    <h1>FORM PERMOHONAN KARTU BARU</h1>
+    <form action="/submit" method="post">
+        <div class="form-group">
+            <label>Jenis Permohonan:</label>
+            <div class="inline"><input type="checkbox" name="Jenis Permintaan" value="Registrasi Halo"> Registrasi Halo</div>
+            <div class="inline"><input type="checkbox" name="Jenis Permintaan" value="Penambahan Nomor"> Penambahan Nomor</div>
+            <div class="inline"><input type="checkbox" name="Jenis Permintaan " value="Migrasi Prabayar ke Halo"> Migrasi Prabayar ke Halo</div>
+        </div>
+
+        <div class="form-group">
+            <label>Corporate:</label>
+            <input type="text" name="Corporate">
+        </div>
+
+        <div class="form-group">
+            <label>No.PKS/WOSPK/MOU/BAK:</label>
+            <input type="text" name="No.PKS/WOSPK/MOU/BAK">
+        </div>
+
+        <div class="form-group">
+            <label>Consumer:</label>
+            <input type="text" name="Consumer">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Telkomsel Halo (Baru/Tambahan):</label>
+            <input type="text" name="Nomor Halo Baru" pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Telkomsel Halo Utama (jika ada):</label>
+            <input type="text" name="Nomor Halo Utama" pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Prabayar:</label>
+            <input type="text" name="Nomor Prabayar" pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        </div>
+
+        <div class="form-group">
+            <label>Nama Perusahaan:</label>
+            <input type="text" name="Nama Perusahaan">
+        </div>
+
+        <div class="form-group">
+            <label>Nama Pelanggan / Nama Kontak Perusahaan:</label>
+            <input type="text" name="Nama Pelanggan / Nama Kontak Perusahaan">
+        </div>
+
+        <div class="form-group">
+            <label>No. Induk Kependudukan:</label>
+            <input type="text" name="No. Induk Kependudukan">
+        </div>
+
+        <div class="form-group">
+            <label>No. Kartu Keluarga:</label>
+            <input type="text" name="No. Kartu Keluarga">
+        </div>
+
+        <div class="form-group">
+            <label>Tanggal Lahir:</label>
+            <input type="date" name="Tanggal Lahir">
+        </div>
+
+        <div class="form-group">
+            <label>Kartu Identitas (Untuk WNA):</label>
+            <select name="Kartu Identitas">
+                <option value="Kartu Identitas">Paspor</option>
+                <option value="Kartu Identitas">KITAP/KITAS</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>No. Paspor/KITAP/KITAS:</label>
+            <input type="text" name="No. Paspor/KITAP/KITAS">
+        </div>
+
+        <div class="form-group">
+            <label>Masa Berlaku Paspor/KITAP/KITAS:</label>
+            <input type="date" name="Masa Berlaku Paspor/KITAP/KITAS">
+        </div>
+
+        <div class="form-group">
+            <label>Kewarganegaraan:</label>
+            <select name="Kewarganegaraan">
+                <option value="WNI">WNI</option>
+                <option value="WNA">WNA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat (Jika berbeda dengan data Dukcapil):</label>
+            <div class="inline"><input type="checkbox" name="Tempat" value="Kantor" onclick="onlyOne(this)"> Kantor</div>
+            <div class="inline"><input type="checkbox" name="Tempat" value="Rumah"onclick="onlyOne(this)"> Rumah</div>
+        </div>
+        <script>
+            function onlyOne(checkbox) {
+                var checkboxes = document.getElementsByName('Tempat');
+                checkboxes.forEach((item) => {
+                    if (item !== checkbox) item.checked = false;
+                });
+            }
+        </script>
+
+        <div class="form-group">
+            <label>Alamat Lengkap:</label>
+            <input type="text" name="Alamat Lengkap">
+        </div>
+        <div class="form-group">
+            <label>Kota:</label>
+            <input type="text" name="Kota">
+        </div>
+
+        <div class="form-group">
+            <label>Provinsi:</label>
+            <input type="text" name="Provinsi">
+        </div>
+        <div class="form-group">
+            <label>Kode Pos:</label>
+            <input type="text" name="Kode Pos">
+        </div>
+        <div class="form-group">
+            <label>Alamat Email e-Bill:</label>
+            <input type="email" name="Email">
+        </div>
+
+        <div class="form-group">
+            <label>No. Telepon (Kantor/Rumah):</label>
+            <input type="text" name="Telepon" attern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Pembayaran:</label>
+            <div class="inline"><input type="checkbox" name="Jenis Pembayaran" value="Tunai"> Tunai</div>
+            <div class="inline"><input type="checkbox" name="Jenis Pembayaran" value="Debit Rekebing"> Debit Rekebing</div>
+            <div class="inline"><input type="checkbox" name="Jenis Pembayaran" value="Auto debit Kartu Kredit"> Auto debit Kartu Kredit</div>
+            <div class="inline"><input type="checkbox" name="Jenis Pembayaran" value="Transfer ke Virtual Account"> Transfer ke Virtual Account</div>
+        </div>
+        <div class="form-group">
+            <label>No. Kartu Kredit/Debit:</label>
+            <input type="text" name="No. Kartu Kredit/Debit">
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Kartu:</label>
+            <div class="inline"><input type="checkbox" name="Jenis Kartu" value="Visa"> Visa</div>
+            <div class="inline"><input type="checkbox" name="Jenis Kartu" value="MasterCard"> MasterCard</div>
+            <div class="inline"><input type="checkbox" name="Jenis Kartu" value="Lainnya"> Lainnya</div>
+        </div>
+        <div class="form-group">
+            <label for="masa_berlaku">Masa Berlaku:</label>
+            <input type="text" name="Bulan Masa Berlaku" maxlength="2" placeholder="MM">
+            <input type="text" name="Tahun Masa Berlaku" maxlength="2" placeholder="YY">
+        </div>
+
+        <div class="form-group">
+            <label>Bank:</label>
+            <input type="text" name="Bank">
+        </div>
+
+        <p><strong>*Orang lain yang bisa dihubungin/Penanggung Jawab/Nama Kontak Perusahaan*</strong></p>
+        <div class="form-group">
+            <label>Nama:</label>
+            <input type="text" name="Nama">
+        </div>
+        <div class="form-group">
+            <label>Nomor Telepon:</label>
+            <input type="text" name="Nomor Telepon" pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+        </div>
+        <p><strong>*Pelanggan bersedia menerima informasi SMS broadcast email atau sejenisnya dari Telkomsel yang berisikan informasi layanan dan produk Telkomsel dan mitranya*</strong></p>
+        <div class="form-group">
+            <label>Bersedai/tidak:</label>
+            <div class="inline"><input type="checkbox" name="Bersedai/tidak" value="ya"> Bersedia</div>
+            <div class="inline"><input type="checkbox" name="Bersedai/tidak" value="Tidak"> Tidak</div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
